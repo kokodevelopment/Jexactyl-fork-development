@@ -2,7 +2,7 @@
 
 ![Downloads - Total](https://img.shields.io/github/downloads/kokofixcomputers/jexactyl/total?style=for-the-badge)
 ![Downloads - Latest](https://img.shields.io/github/downloads/kokofixcomputers/jexactyl/latest/total?style=for-the-badge)
-![Version](https://img.shields.io/github/v/release/kokofixcomputers/jexactyl?style=for-the-badge)
+![Version](https://img.shields.io/github/v/release/kokofixcomputers/jexactyl?style=for-the-badge) 
 ![Contributors](https://img.shields.io/github/contributors-anon/kokofixcomputers/jexactyl?style=for-the-badge)
 
 <h1 align="center">Jexactyl-fork</h1>
