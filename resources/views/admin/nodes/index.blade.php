@@ -47,6 +47,8 @@
                             <th class="text-center">Servers</th>
                             <th class="text-center">SSL</th>
                             <th class="text-center">Public</th>
+                            <th class="text-center">ID</th>
+                            <th class="text-center">UUID</th>
                         </tr>
                         @foreach ($nodes as $node)
                             <tr>
@@ -58,6 +60,8 @@
                                 <td class="text-center">{{ $node->servers_count }}</td>
                                 <td class="text-center" style="color:{{ ($node->scheme === 'https') ? '#50af51' : '#d9534f' }}"><i class="fa fa-{{ ($node->scheme === 'https') ? 'lock' : 'unlock' }}"></i></td>
                                 <td class="text-center"><i class="fa fa-{{ ($node->public) ? 'eye' : 'eye-slash' }}"></i></td>
+                                <td class="text-center">{{ $node->id }}</td>
+                                <td class="text-center">{{ $node->uuid }}</td>
                             </tr>
                         @endforeach
                     </tbody>
