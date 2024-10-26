@@ -10,7 +10,7 @@ import Can from '@/components/elements/Can';
 import FlashMessageRender from '@/components/FlashMessageRender';
 import PageContentBlock from '@/components/elements/PageContentBlock';
 import { ServerError } from '@/components/elements/ScreenBlock';
-import Button from '@/components/elements/Button';
+import { Button } from '@/components/elements/button/index';
 import Select from '@/components/elements/Select';
 import modes from '@/modes';
 import useFlash from '@/plugins/useFlash';
