@@ -25,6 +25,7 @@ Installation is moved to the [official jexactyl-fork docs](https://jexactyl-fork
 ## Things i added/fixed
 - Make descriptions for info and errors more clear
 - Kill button
+- **MACRO EDITOR!**
 - Power Icons
 - Servers show on mobile in servers dashboard
 - Server info (Unavaiable/Suspended/Installing/etc) actually shows now!
