@@ -1,3 +1,6 @@
+### Version 1.4.4
+- Update README.md (by kokodev)
+
 ### Version 1.3.3
 - Update VERSION (by kokodev)
 - fix build and release (by kokodev)
