@@ -7,7 +7,7 @@
 
 <h1 align="center">Jexactyl-fork</h1>
 <h5 align="center">
-    <strong>
+    <strong> 
         Jexactyl-fork is a fast, advanced and customisable game management panel and billing system in one.
         Give your users the edge in terms of performance, reliability and pure functionality. 
     </strong>
