@@ -19,7 +19,6 @@ import ErrorBoundary from '@/components/elements/ErrorBoundary';
 import { encodePathSegments, hashToPath } from '@/helpers';
 import { dirname } from 'path';
 import { Editor } from '@monaco-editor/react';
-import { MonacoMarkdownExtension } from 'monaco-markdown';
 import { useMonacoEx } from 'monaco-editor-ex';
 import CodemirrorEditor from '@/components/elements/CodemirrorEditor';
 import tw from 'twin.macro';
@@ -139,13 +138,6 @@ export default () => {
     if (error) {
         return <ServerError message={error} onBack={() => history.goBack()} />;
     }
-    const initializeMarkdownExtension = (editor, monaco) => {
-        const language = getLanguageFromFilename(hash.replace(/^#/, ''));
-        if (language === 'markdown') {
-            const markdownExtension = new MonacoMarkdownExtension();
-            markdownExtension.activate(editor);
-        }
-    };
 
     return (
         <PageContentBlock>
@@ -202,7 +194,6 @@ export default () => {
                         onMount={(editor, monaco) => {
                             editorRef.current = editor;
                             useMonacoEx(monaco); // Integrate monaco-editor-ex
-                            initializeMarkdownExtension(editor, monaco); // Initialize Markdown extension if applicable
                         }}
                     />
                 )}
