@@ -139,6 +139,13 @@ export default () => {
     if (error) {
         return <ServerError message={error} onBack={() => history.goBack()} />;
     }
+    const initializeMarkdownExtension = (editor, monaco) => {
+        const language = getLanguageFromFilename(hash.replace(/^#/, ''));
+        if (language === 'markdown') {
+            const markdownExtension = new MonacoMarkdownExtension();
+            markdownExtension.activate(editor);
+        }
+    };
 
     return (
         <PageContentBlock>
