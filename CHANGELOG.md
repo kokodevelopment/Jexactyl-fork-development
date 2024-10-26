@@ -1,3 +1,6 @@
+### Version 1.4.5
+- Make node UUID use code to display (by kokodev)
+
 ### Version 1.4.4
 - Update README.md (by kokodev)
 
