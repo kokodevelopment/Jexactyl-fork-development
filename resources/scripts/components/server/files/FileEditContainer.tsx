@@ -19,6 +19,7 @@ import ErrorBoundary from '@/components/elements/ErrorBoundary';
 import { encodePathSegments, hashToPath } from '@/helpers';
 import { dirname } from 'path';
 import { Editor } from '@monaco-editor/react';
+import { useMonacoEx } from 'monaco-editor-ex';
 import CodemirrorEditor from '@/components/elements/CodemirrorEditor';
 import tw from 'twin.macro';
 
@@ -190,8 +191,9 @@ export default () => {
                         theme="vs-dark"
                         language={getLanguageFromFilename(hash.replace(/^#/, ''))}
                         value={content}
-                        onMount={(editor) => {
+                        onMount={(editor, monaco) => {
                             editorRef.current = editor;
+                            useMonacoEx(monaco); // Integrate monaco-editor-ex
                         }}
                     />
                 )}
