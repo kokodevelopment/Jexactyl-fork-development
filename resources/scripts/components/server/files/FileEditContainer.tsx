@@ -19,6 +19,7 @@ import ErrorBoundary from '@/components/elements/ErrorBoundary';
 import { encodePathSegments, hashToPath } from '@/helpers';
 import { dirname } from 'path';
 import { Editor } from '@monaco-editor/react';
+import { MonacoMarkdownExtension } from 'monaco-markdown';
 import { useMonacoEx } from 'monaco-editor-ex';
 import CodemirrorEditor from '@/components/elements/CodemirrorEditor';
 import tw from 'twin.macro';
@@ -194,6 +195,7 @@ export default () => {
                         onMount={(editor, monaco) => {
                             editorRef.current = editor;
                             useMonacoEx(monaco); // Integrate monaco-editor-ex
+                            initializeMarkdownExtension(editor, monaco); // Initialize Markdown extension if applicable
                         }}
                     />
                 )}
