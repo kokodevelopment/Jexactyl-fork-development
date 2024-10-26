@@ -6482,23 +6482,10 @@ monaco-editor-ex@^1.3.10:
   resolved "https://registry.yarnpkg.com/monaco-editor-ex/-/monaco-editor-ex-1.3.10.tgz#01c69d1261c830fe2bd928f5f6d5974a065bdc19"
   integrity sha512-JtMBNTCNVp4x1hQmH+0hfgGW1e0fEZWH44PB7SgukfvZu0+Fm0IesUdBaiEgly5C9jGKFjoOfgUy9ZnCXlSRPQ==
 
-monaco-editor@0.30.1:
-  version "0.30.1"
-  resolved "https://registry.yarnpkg.com/monaco-editor/-/monaco-editor-0.30.1.tgz#47f8d18a0aa2264fc5654581741ab8d7bec01689"
-  integrity sha512-B/y4+b2O5G2gjuxIFtCE2EkM17R2NM7/3F8x0qcPsqy4V83bitJTIO4TIeZpYlzu/xy6INiY/+84BEm6+7Cmzg==
-
 monaco-editor@^0.52.0:
   version "0.52.0"
   resolved "https://registry.yarnpkg.com/monaco-editor/-/monaco-editor-0.52.0.tgz#d47c02b191eae208d68878d679b3ee7456031be7"
   integrity sha512-OeWhNpABLCeTqubfqLMXGsqf6OmPU6pHM85kF3dhy6kq5hnhuVS1p3VrEW/XhWHc71P2tHyS5JFySD8mgs1crw==
-
-monaco-markdown@^0.0.12:
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/monaco-markdown/-/monaco-markdown-0.0.12.tgz#b7a65d34539579872bf366610e6540cb7dd95dad"
-  integrity sha512-KkGheL2pUazZJY2DfBqpHuMQOjILkbYGNtF5MzpT3ZWupKjunkpL7ByKTllBQGKKcVNt5nuRHl7YsKFskWlc6Q==
-  dependencies:
-    monaco-editor "0.30.1"
-    string-similarity "^3.0.0"
 
 move-concurrently@^1.0.1:
   version "1.0.1"
@@ -8521,11 +8508,6 @@ string-length@^4.0.1:
   dependencies:
     char-regex "^1.0.2"
     strip-ansi "^6.0.0"
-
-string-similarity@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/string-similarity/-/string-similarity-3.0.0.tgz#07b0bc69fae200ad88ceef4983878d03793847c7"
-  integrity sha512-7kS7LyTp56OqOI2BDWQNVnLX/rCxIQn+/5M0op1WV6P8Xx6TZNdajpuqQdiJ7Xx+p1C5CsWMvdiBp9ApMhxzEQ==
 
 string-similarity@^4.0.3:
   version "4.0.3"
