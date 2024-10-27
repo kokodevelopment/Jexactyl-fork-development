@@ -27,7 +27,7 @@ const isMobile = () => {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 };
 
-const getLanguageFromFilename = (filename: string) => {
+const getLanguageFromFilename = (filename) => {
     const extension = filename.split('.').pop();
     switch (extension) {
         case 'js':
@@ -68,6 +68,53 @@ const getLanguageFromFilename = (filename: string) => {
         case 'yaml':
         case 'yml':
             return 'yaml';
+
+        // New cases for PowerShell
+        case 'ps1':
+            return 'powershell';
+        case 'psm1':
+            return 'powershell';
+        case 'psd1':
+            return 'powershell';
+
+        // Additional languages
+        case 'd.ts':
+            return 'typescript';
+        case 'hpp':
+            return 'cpp';
+        case 'kt':
+            return 'kotlin';
+        case 'swift':
+            return 'swift';
+        case 'm':
+        case 'h':
+            return 'objectivec';
+        case 'scala':
+            return 'scala';
+        case 'bash':
+        case 'zsh':
+            return 'shell';
+        case 'dart':
+            return 'dart';
+        case 'r':
+            return 'r';
+        case 'hs':
+            return 'haskell';
+        case 'ex':
+        case 'exs':
+            return 'elixir';
+        case 'lua':
+            return 'lua';
+        case 'groovy':
+        case 'gvy':
+            return 'groovy';
+        case 'coffee':
+            return 'coffeescript';
+        case 'graphql':
+        case 'gql':
+            return 'graphql';
+
+        // Default
         default:
             return 'plaintext';
     }
