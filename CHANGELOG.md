@@ -1,3 +1,6 @@
+### Version 1.5.0
+- Update index.blade.php (by kokodev)
+
 ### Version 1.4.9
 - revert admin sidebar (by kokodev)
 
