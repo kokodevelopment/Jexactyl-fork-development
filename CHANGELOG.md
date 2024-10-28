@@ -1,3 +1,7 @@
+### Version 1.5.1
+- Update index.blade.php (by kokodev)
+- Update index.blade.php (by kokodev)
+
 ### Version 1.5.0
 - Update index.blade.php (by kokodev)
 
