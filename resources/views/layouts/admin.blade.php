@@ -96,41 +96,87 @@
                     </ul>
                 </section>
             </aside>
-
-            <!-- Main content -->
             <div class="content-wrapper">
-                <!-- Content Header -->
                 <section class="content-header">
                     @yield('content-header')
                 </section>
-
-                <!-- Main Content -->
                 <section class="content">
-                    <!-- Display errors -->
-                    @if (count($errors) > 0)
-                        <!-- Error handling code -->
-                    @endif
-
-                    <!-- Display alerts -->
-                    @foreach (Alert::getMessages() as $type => $messages)
-                        <!-- Alert handling code -->
-                    @endforeach
-
+                    <div class="row">
+                        <div class="col-xs-12">
+                            @if (count($errors) > 0)
+                                <div class="alert alert-danger">
+                                    There was an error validating the data provided.<br><br>
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            @foreach (Alert::getMessages() as $type => $messages)
+                                @foreach ($messages as $message)
+                                    <div class="alert alert-{{ $type }} alert-dismissable" role="alert">
+                                        {!! $message !!}
+                                    </div>
+                                @endforeach
+                            @endforeach
+                        </div>
+                    </div>
                     @yield('content')
                 </section>
-
             </div>
-
-            <!-- Donation message at the bottom of the page -->
-            <footer style="text-align: center; padding: 20px; background-color: #f8f9fa; position: relative; bottom: 0; width: 100%;">
-                Please consider donating to kokofixcomputers using GitHub Sponsors
-            </footer>
-
         </div>
-
         @section('footer-scripts')
-            <!-- Footer scripts -->
-            ...
+            <script src="/js/keyboard.polyfill.js" type="application/javascript"></script>
+            <script>keyboardeventKeyPolyfill.polyfill();</script>
+
+            {!! Theme::js('vendor/jquery/jquery.min.js?t={cache-version}') !!}
+            {!! Theme::js('vendor/sweetalert/sweetalert.min.js?t={cache-version}') !!}
+            {!! Theme::js('vendor/bootstrap/bootstrap.min.js?t={cache-version}') !!}
+            {!! Theme::js('vendor/slimscroll/jquery.slimscroll.min.js?t={cache-version}') !!}
+            {!! Theme::js('vendor/adminlte/app.min.js?t={cache-version}') !!}
+            {!! Theme::js('vendor/bootstrap-notify/bootstrap-notify.min.js?t={cache-version}') !!}
+            {!! Theme::js('vendor/select2/select2.full.min.js?t={cache-version}') !!}
+            {!! Theme::js('js/admin/functions.js?t={cache-version}') !!}
+            <script src="/js/autocomplete.js" type="application/javascript"></script>
+
+            <script>
+                feather.replace()
+            </script>
+
+            @if(Auth::user()->root_admin)
+                <script>
+                    $('#logoutButton').on('click', function (event) {
+                        event.preventDefault();
+
+                        var that = this;
+                        swal({
+                            title: 'Do you want to log out?',
+                            type: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: '#d9534f',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Log out'
+                        }, function () {
+                             $.ajax({
+                                type: 'POST',
+                                url: '{{ route('auth.logout') }}',
+                                data: {
+                                    _token: '{{ csrf_token() }}'
+                                },complete: function () {
+                                    window.location.href = '{{route('auth.login')}}';
+                                }
+                        });
+                    });
+                });
+                </script>
+            @endif
+
+            <script>
+                $(function () {
+                    $('[data-toggle="tooltip"]').tooltip();
+                })
+            </script>
         @show
-    </body> 
-</html> 
+    </body>
+</html>
