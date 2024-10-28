@@ -25,6 +25,18 @@
                 @endif
             ">
                 <div class="box-header with-border">
+                    <i class="fa fa-code-fork"></i> <h3 class="box-title">About</h3>
+                </div>
+                <div class="box-body">
+                        About Jexactyl-fork <code>{{ config('app.version') }}</code>
+
+                        Jexactyl-fork is a fork of Jexactyl made by kokofixcomputers.
+
+                        This fork was created to fix bugs, improve on features and introduce new features!
+
+                        Do not hesitate to report bugs or ask for support in the github issues or our <a href="https://discord.gg/GQd3DrxXyj">discord server!</a>
+                </div>
+                <div class="box-header with-border">
                     <i class="fa fa-code-fork"></i> <h3 class="box-title">Software Release <small>Verify Jexactyl is up-to-date.</small></h3>
                 </div>
                 <div class="box-body">
