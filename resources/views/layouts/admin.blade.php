@@ -26,30 +26,11 @@
             {!! Theme::css('vendor/adminlte/colors/skin-blue.min.css?t={cache-version}') !!}
             {!! Theme::css('vendor/sweetalert/sweetalert.min.css?t={cache-version}') !!}
             {!! Theme::css('vendor/animate/animate.min.css?t={cache-version}') !!}
+            <!-- Ability to customize Jexactyl theme -->
             <link rel="stylesheet" href="/themes/{{ config('theme.admin', 'jexactyl') }}/css/{{ config('theme.admin', 'jexactyl') }}.css">
 
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-
-            <!-- Custom CSS to extend sidebar width -->
-            <style>
-                .main-sidebar {
-                    width: 250px; /* Adjust width as needed */
-                }
-                .sidebar-menu li {
-                    display: flex;
-                    align-items: center;
-                }
-                .sidebar-menu li a {
-                    display: flex;
-                    align-items: center;
-                    padding: 10px;
-                }
-                .sidebar-menu li span {
-                    margin-left: 10px; /* Space between icon and text */
-                    color: #fff; /* Text color */
-                }
-            </style>
         @show
     </head>
     <body class="skin-blue fixed">
@@ -64,71 +45,55 @@
                     <ul class="sidebar-menu">
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.index') ?: 'active' }}">
                             <a href="{{ route('admin.index')}}">
-                                <i data-feather="tool"></i> 
-                                <span>Dashboard</span>
+                                <i data-feather="tool" style="margin-left: 12px;"></i> 
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.tickets') ?: 'active' }}">
                             <a href="{{ route('admin.tickets.index')}}">
-                                <i data-feather="help-circle"></i>
-                                <span>Tickets</span>
+                                <i data-feather="help-circle" style="margin-left: 12px;"></i>
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.api') ?: 'active' }}">
                             <a href="{{ route('admin.api.index')}}">
-                                <i data-feather="git-branch"></i>
-                                <span>API</span>
+                                <i data-feather="git-branch" style="margin-left: 12px;"></i>
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.databases') ?: 'active' }}">
                             <a href="{{ route('admin.databases') }}">
-                                <i data-feather="database"></i>
-                                <span>Databases</span>
+                                <i data-feather="database" style="margin-left: 12px;"></i>
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.locations') ?: 'active' }}">
                             <a href="{{ route('admin.locations') }}">
-                                <i data-feather="navigation"></i>
-                                <span>Locations</span>
+                                <i data-feather="navigation" style="margin-left: 12px;"></i>
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.nodes') ?: 'active' }}">
                             <a href="{{ route('admin.nodes') }}">
-                                <i data-feather="layers"></i>
-                                <span>Nodes</span>
+                                <i data-feather="layers" style="margin-left: 12px;"></i>
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.servers') ?: 'active' }}">
                             <a href="{{ route('admin.servers') }}">
-                                <i data-feather="server"></i>
-                                <span>Servers</span>
+                                <i data-feather="server" style="margin-left: 12px;"></i>
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.users') ?: 'active' }}">
                             <a href="{{ route('admin.users') }}">
-                                <i data-feather="users"></i>
-                                <span>Users</span>
+                                <i data-feather="users" style="margin-left: 12px;"></i>
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.mounts') ?: 'active' }}">
                             <a href="{{ route('admin.mounts') }}">
-                                <i data-feather="hard-drive"></i>
-                                <span>Mounts</span>
+                                <i data-feather="hard-drive" style="margin-left: 12px;"></i>
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.nests') ?: 'active' }}">
                             <a href="{{ route('admin.nests') }}">
-                                <i data-feather="archive"></i>
-                                <span>Nests</span>
+                                <i data-feather="archive" style="margin-left: 12px;"></i>
                             </a>
                         </li>
                     </ul>
-
-                    <!-- Donation message -->
-                    <div style="margin-top: 20px; text-align: center;">
-                        <p>Please consider donating to kokofixcomputers using GitHub Sponsors</p>
-                    </div>
-
                 </section>
             </aside>
 
@@ -143,12 +108,12 @@
                 <section class="content">
                     <!-- Display errors -->
                     @if (count($errors) > 0)
-                        ...
+                        <!-- Error handling code -->
                     @endif
 
                     <!-- Display alerts -->
                     @foreach (Alert::getMessages() as $type => $messages)
-                        ...
+                        <!-- Alert handling code -->
                     @endforeach
 
                     @yield('content')
@@ -156,9 +121,15 @@
 
             </div>
 
+            <!-- Donation message at the bottom of the page -->
+            <footer style="text-align: center; padding: 20px; background-color: #f8f9fa; position: relative; bottom: 0; width: 100%;">
+                Please consider donating to kokofixcomputers using GitHub Sponsors
+            </footer>
+
         </div>
 
         @section('footer-scripts')
+            <!-- Footer scripts -->
             ...
         @show
     </body> 
