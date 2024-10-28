@@ -27,7 +27,7 @@ const isMobile = () => {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 };
 
-const getLanguageFromFilename = (filename) => {
+const getLanguageFromFilename = (filename: string) => {
     const extension = filename.split('.').pop();
     switch (extension) {
         case 'js':
