@@ -1,3 +1,7 @@
+### Version 1.4.6
+- add more languages! (by kokodev)
+- forgot to make this! (by kokodev)
+
 ### Version 1.4.5
 - Make node UUID use code to display (by kokodev)
 
