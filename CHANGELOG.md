@@ -1,3 +1,6 @@
+### Version 1.4.8
+- Don't like the look of admin. Changing layout (by kokodev)
+
 ### Version 1.4.7
 - Update admin.blade.php (by kokodev)
 - Add titles to buttons in sidebar admin (by kokodev)
