@@ -26,7 +26,6 @@
             {!! Theme::css('vendor/adminlte/colors/skin-blue.min.css?t={cache-version}') !!}
             {!! Theme::css('vendor/sweetalert/sweetalert.min.css?t={cache-version}') !!}
             {!! Theme::css('vendor/animate/animate.min.css?t={cache-version}') !!}
-            <!-- Ability to customize Jexactyl theme -->
             <link rel="stylesheet" href="/themes/{{ config('theme.admin', 'jexactyl') }}/css/{{ config('theme.admin', 'jexactyl') }}.css">
 
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -94,6 +93,12 @@
                             </a>
                         </li>
                     </ul>
+
+                    <!-- Donation message -->
+                    <div style="margin-top: 20px; text-align: center;">
+                        <p>Please consider donating to kokofixcomputers using GitHub Sponsors.</p>
+                    </div>
+
                 </section>
             </aside>
             <div class="content-wrapper">
@@ -126,6 +131,7 @@
                 </section>
             </div>
         </div>
+
         @section('footer-scripts')
             <script src="/js/keyboard.polyfill.js" type="application/javascript"></script>
             <script>keyboardeventKeyPolyfill.polyfill();</script>
@@ -140,12 +146,10 @@
             {!! Theme::js('js/admin/functions.js?t={cache-version}') !!}
             <script src="/js/autocomplete.js" type="application/javascript"></script>
 
-            <script>
-                feather.replace()
-            </script>
+            <script>feather.replace()</script>
 
             @if(Auth::user()->root_admin)
-                <script>
+                <script> 
                     $('#logoutButton').on('click', function (event) {
                         event.preventDefault();
 
@@ -169,14 +173,14 @@
                         });
                     });
                 });
-                </script>
+                </script> 
             @endif
 
-            <script>
+            <script> 
                 $(function () {
                     $('[data-toggle="tooltip"]').tooltip();
                 })
-            </script>
+            </script> 
         @show
-    </body>
-</html>
+    </body> 
+</html> 
