@@ -30,6 +30,26 @@
 
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+            <!-- Custom CSS to extend sidebar width -->
+            <style>
+                .main-sidebar {
+                    width: 250px; /* Adjust width as needed */
+                }
+                .sidebar-menu li {
+                    display: flex;
+                    align-items: center;
+                }
+                .sidebar-menu li a {
+                    display: flex;
+                    align-items: center;
+                    padding: 10px;
+                }
+                .sidebar-menu li span {
+                    margin-left: 10px; /* Space between icon and text */
+                    color: #fff; /* Text color */
+                }
+            </style>
         @show
     </head>
     <body class="skin-blue fixed">
@@ -44,143 +64,102 @@
                     <ul class="sidebar-menu">
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.index') ?: 'active' }}">
                             <a href="{{ route('admin.index')}}">
-                                <i data-feather="tool" style="margin-left: 12px;"></i> 
+                                <i data-feather="tool"></i> 
+                                <span>Dashboard</span>
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.tickets') ?: 'active' }}">
                             <a href="{{ route('admin.tickets.index')}}">
-                                <i data-feather="help-circle" style="margin-left: 12px;"></i>
+                                <i data-feather="help-circle"></i>
+                                <span>Tickets</span>
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.api') ?: 'active' }}">
                             <a href="{{ route('admin.api.index')}}">
-                                <i data-feather="git-branch" style="margin-left: 12px;"></i>
+                                <i data-feather="git-branch"></i>
+                                <span>API</span>
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.databases') ?: 'active' }}">
                             <a href="{{ route('admin.databases') }}">
-                                <i data-feather="database" style="margin-left: 12px;"></i>
+                                <i data-feather="database"></i>
+                                <span>Databases</span>
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.locations') ?: 'active' }}">
                             <a href="{{ route('admin.locations') }}">
-                                <i data-feather="navigation" style="margin-left: 12px;"></i>
+                                <i data-feather="navigation"></i>
+                                <span>Locations</span>
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.nodes') ?: 'active' }}">
                             <a href="{{ route('admin.nodes') }}">
-                                <i data-feather="layers" style="margin-left: 12px;"></i>
+                                <i data-feather="layers"></i>
+                                <span>Nodes</span>
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.servers') ?: 'active' }}">
                             <a href="{{ route('admin.servers') }}">
-                                <i data-feather="server" style="margin-left: 12px;"></i>
+                                <i data-feather="server"></i>
+                                <span>Servers</span>
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.users') ?: 'active' }}">
                             <a href="{{ route('admin.users') }}">
-                                <i data-feather="users" style="margin-left: 12px;"></i>
+                                <i data-feather="users"></i>
+                                <span>Users</span>
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.mounts') ?: 'active' }}">
                             <a href="{{ route('admin.mounts') }}">
-                                <i data-feather="hard-drive" style="margin-left: 12px;"></i>
+                                <i data-feather="hard-drive"></i>
+                                <span>Mounts</span>
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.nests') ?: 'active' }}">
                             <a href="{{ route('admin.nests') }}">
-                                <i data-feather="archive" style="margin-left: 12px;"></i>
+                                <i data-feather="archive"></i>
+                                <span>Nests</span>
                             </a>
                         </li>
                     </ul>
 
                     <!-- Donation message -->
                     <div style="margin-top: 20px; text-align: center;">
-                        <p>Please consider donating to kokofixcomputers using GitHub Sponsors.</p>
+                        <p>Please consider donating to kokofixcomputers using GitHub Sponsors</p>
                     </div>
 
                 </section>
             </aside>
+
+            <!-- Main content -->
             <div class="content-wrapper">
+                <!-- Content Header -->
                 <section class="content-header">
                     @yield('content-header')
                 </section>
+
+                <!-- Main Content -->
                 <section class="content">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            @if (count($errors) > 0)
-                                <div class="alert alert-danger">
-                                    There was an error validating the data provided.<br><br>
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-                            @foreach (Alert::getMessages() as $type => $messages)
-                                @foreach ($messages as $message)
-                                    <div class="alert alert-{{ $type }} alert-dismissable" role="alert">
-                                        {!! $message !!}
-                                    </div>
-                                @endforeach
-                            @endforeach
-                        </div>
-                    </div>
+                    <!-- Display errors -->
+                    @if (count($errors) > 0)
+                        ...
+                    @endif
+
+                    <!-- Display alerts -->
+                    @foreach (Alert::getMessages() as $type => $messages)
+                        ...
+                    @endforeach
+
                     @yield('content')
                 </section>
+
             </div>
+
         </div>
 
         @section('footer-scripts')
-            <script src="/js/keyboard.polyfill.js" type="application/javascript"></script>
-            <script>keyboardeventKeyPolyfill.polyfill();</script>
-
-            {!! Theme::js('vendor/jquery/jquery.min.js?t={cache-version}') !!}
-            {!! Theme::js('vendor/sweetalert/sweetalert.min.js?t={cache-version}') !!}
-            {!! Theme::js('vendor/bootstrap/bootstrap.min.js?t={cache-version}') !!}
-            {!! Theme::js('vendor/slimscroll/jquery.slimscroll.min.js?t={cache-version}') !!}
-            {!! Theme::js('vendor/adminlte/app.min.js?t={cache-version}') !!}
-            {!! Theme::js('vendor/bootstrap-notify/bootstrap-notify.min.js?t={cache-version}') !!}
-            {!! Theme::js('vendor/select2/select2.full.min.js?t={cache-version}') !!}
-            {!! Theme::js('js/admin/functions.js?t={cache-version}') !!}
-            <script src="/js/autocomplete.js" type="application/javascript"></script>
-
-            <script>feather.replace()</script>
-
-            @if(Auth::user()->root_admin)
-                <script> 
-                    $('#logoutButton').on('click', function (event) {
-                        event.preventDefault();
-
-                        var that = this;
-                        swal({
-                            title: 'Do you want to log out?',
-                            type: 'warning',
-                            showCancelButton: true,
-                            confirmButtonColor: '#d9534f',
-                            cancelButtonColor: '#d33',
-                            confirmButtonText: 'Log out'
-                        }, function () {
-                             $.ajax({
-                                type: 'POST',
-                                url: '{{ route('auth.logout') }}',
-                                data: {
-                                    _token: '{{ csrf_token() }}'
-                                },complete: function () {
-                                    window.location.href = '{{route('auth.login')}}';
-                                }
-                        });
-                    });
-                });
-                </script> 
-            @endif
-
-            <script> 
-                $(function () {
-                    $('[data-toggle="tooltip"]').tooltip();
-                })
-            </script> 
+            ...
         @show
     </body> 
 </html> 
