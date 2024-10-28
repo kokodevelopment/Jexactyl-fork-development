@@ -241,6 +241,11 @@ export default () => {
                         onMount={(editor, monaco) => {
                             editorRef.current = editor;
                             useMonacoEx(monaco); // Integrate monaco-editor-ex
+
+                            // Add custom key bindings for saving
+                            editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S, () => {
+                                save(); // Call the save function
+                            });
                         }}
                     />
                 )}
