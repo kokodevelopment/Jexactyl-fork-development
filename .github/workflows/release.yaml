@@ -1,5 +1,5 @@
 
-name: "Release 1.4.6"
+name: "Release 1.4.7"
 
 on:
   workflow_dispatch:  # Allows manual triggering of the workflow
@@ -56,11 +56,11 @@ jobs:
           name: release-artifact
           path: release/kokofixcomputers/panel.tar.gz
 
-      - name: "Release 1.4.6"
+      - name: "Release 1.4.7"
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: "1.4.6"
-          name: "Release 1.4.6"
+          tag_name: "1.4.7"
+          name: "Release 1.4.7"
           files: release/kokofixcomputers/panel.tar.gz  # Specify the file to attach
           draft: false  # Set to true if you want to create a draft release
           prerelease: false  # Set to true if this is a pre-release
