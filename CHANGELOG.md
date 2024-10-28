@@ -1,3 +1,7 @@
+### Version 1.4.7
+- Update admin.blade.php (by kokodev)
+- Add titles to buttons in sidebar admin (by kokodev)
+
 ### Version 1.4.6
 - add more languages! (by kokodev)
 - forgot to make this! (by kokodev)
