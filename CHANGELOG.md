@@ -1,3 +1,6 @@
+### Version 1.4.9
+- revert admin sidebar (by kokodev)
+
 ### Version 1.4.8
 - Don't like the look of admin. Changing layout (by kokodev)
 
