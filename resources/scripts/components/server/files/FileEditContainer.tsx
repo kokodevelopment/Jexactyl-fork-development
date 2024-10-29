@@ -243,7 +243,7 @@ export default () => {
                             useMonacoEx(monaco); // Integrate monaco-editor-ex
 
                             // Add custom key bindings for saving
-                            editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S, () => {
+                            editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS, () => {
                                 save(); // Call the save function
                             });
                         }}
