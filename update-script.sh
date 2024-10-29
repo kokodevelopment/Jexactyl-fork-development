@@ -34,7 +34,7 @@ php artisan down || {
 }
 
 echo "Downloading the latest panel release..."
-sudo curl -L https://github.com/kokofixcomputers/jexactyl/releases/latest/download/panel.tar.gz | sudo tar -xzv
+sudo curl -L https://github.com/kokodevelopment/Jexactyl-fork-development/releases/latest/download/panel.tar.gz | sudo tar -xzv
 
 echo "Setting permissions..."
 sudo chown -R www-data:www-data *
